@@ -1,0 +1,13 @@
+- name: install nginx
+  hosts: ansible
+  become: yes #it will get root acess
+  tasks:
+  - name: install nginx
+    ansible.builtin.yum:
+     name: nginx
+     state: installed
+  - name: start nginx
+    ansible.buitlin.service:
+      name: nginx
+      state: started
+  
